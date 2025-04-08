@@ -1,0 +1,1008 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #000000;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  margin: 0;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  height: 102vh;
+  color: white;
+  padding: 0;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+  margin-top: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero > * {
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  padding: 0 1rem;
+  max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-heading {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+  line-height: 1.2;
+  word-wrap: break-word;
+  text-align: center;
+  margin-top: 13rem;
+}
+
+.hero-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  max-width: 80%;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.services, .testimonials, .contact, .gallery {
+  padding: 2rem;
+  margin: 2rem 0;
+  background-color: white;
+  
+}
+
+.logo2 {
+  width: 350px;
+  margin-left: 5rem;
+  margin-top: -2rem;
+}
+
+/* Estilo general para la sección de servicios */
+.services {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative; /* Necesario para que no se sobreponga con el hero */
+  z-index: 2; /* Asegura que esté debajo del hero */
+  overflow: hidden; /* Evita que el contenido se salga */
+  
+}
+
+/* Estilo para cada recuadro de servicio */
+.service-item {
+  position: relative;
+  width: 33.33%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out; /* Solo animamos transform */
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* El efecto de acercamiento: solo animamos el scale */
+.service-item:hover {
+  transform: scale(1.1); /* Un zoom suave */
+  
+}
+
+/* Estilo del contenido de servicio */
+.service-content {
+  text-align: center;
+  margin-top: 40rem;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 80%;
+ 
+}
+
+/* Títulos */
+.service-content h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  
+}
+
+/* Descripción del servicio */
+.service-content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+
+
+/* Estilo general de la sección */
+.conoce-artistas {
+  padding: 4rem 2rem;
+  background-color: #161616; /* Fondo gris claro */
+  position: relative; /* Añadido para que las imágenes decorativas se posicionen en relación a este contenedor */
+  overflow: hidden; /* Esto asegura que las imágenes no sobresalgan fuera de la sección */
+  z-index: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.conoce-artistas-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.conoce-artistas-description {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Flexbox para la disposición de las tarjetas de los artistas */
+.artistas {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: relative; /* Añadido para que las imágenes de tijeras y peine se ubiquen en relación a este contenedor */
+}
+
+/* Estilo de cada tarjeta de artista */
+.artista-card {
+  width: 32%;  /* Tres tarjetas por fila */
+  height: 70vh;  /* Altura fija */
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover en la tarjeta para resaltarla */
+.artista-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-color: #ffffff;
+}
+
+/* Imagen de los artistas */
+.artista-img {
+  width: 100%;
+  height: 100%;  /* La imagen ocupa toda la tarjeta */
+  object-fit: cover;  /* Asegura que la imagen cubra completamente la tarjeta sin distorsionarse */
+  filter: brightness(60%);
+  transition: filter 0.3s ease;
+}
+
+/* Al hacer hover sobre la tarjeta, aclaramos la imagen */
+.artista-card:hover .artista-img {
+  filter: brightness(100%);
+}
+
+/* Información del artista (nombre y rol) */
+.artista-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+/* Mostrar la información al hacer hover */
+.artista-card:hover .artista-info {
+  transform: translateY(0);
+}
+
+/* Nombre del artista */
+.artista-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Rol del artista (más pequeño y de color dorado) */
+.artista-role {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #ffab00;
+}
+
+/* Imágenes decorativas flotantes */
+.decorative-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Para que las imágenes no interfieran con la interacción del usuario */
+  z-index: -1; /* Para que las imágenes queden detrás de las tarjetas de los artistas */
+}
+
+.tijeras {
+  position: absolute;
+  left: 0; /* Coloca la tijera a la izquierda */
+  
+  width: 450px; /* Ajusta el tamaño de la imagen */
+  height: auto;
+}
+
+.peine {
+  position: absolute;
+  right: 0; /* Coloca el peine a la derecha */
+  top: 20%; /* Ajusta la posición vertical */
+  width: 360px;
+  height: auto;
+}
+
+/* Contenedor principal para el horario */
+.horario-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #161616; /* Fondo gris claro */
+}
+
+/* Estilo de cada item que contiene las imágenes */
+.horario-item {
+  width: 50%;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilo del texto sobre la imagen */
+.horario-texto {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: left;
+  padding: 20px;
+  width: 60%; /* Limitar el ancho del texto */
+}
+
+.horario-texto h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Estilo de la lista de horarios con los días */
+.horario-lista {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Separar cada día */
+}
+
+/* Estilo para cada día del horario */
+.horario-dia {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #3c3c3c; /* Línea divisoria entre los días */
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.tarifas {
+  padding: 4rem 2rem;
+  background-color: #161616; /* Fondo gris oscuro */
+  text-align: center;
+  position: relative;  /* Necesario para posicionar las imágenes dentro de esta sección */
+  z-index: -1;
+}
+
+.cuchilla, .cuchilla2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;  /* Asegura que las imágenes estén detrás del contenido */
+}
+
+.cuchilla {
+  left: 0; /* Coloca la imagen a la izquierda */
+  width: 30vh; /* Ajusta el tamaño según necesites */
+  height: auto;
+  top: 75%; /* Ajusta la posición vertical */
+}
+
+.cuchilla2 {
+  right: 0; /* Coloca la imagen a la derecha */
+  width: 30vh; /* Ajusta el tamaño según necesites */
+  height: auto;
+  top: 40%; /* Ajusta la posición vertical */
+}
+
+.tarifas-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.tarifas-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Tres columnas iguales */
+  gap: 2rem; /* Espaciado entre columnas */
+  margin-top: 2rem;
+  width: 60%; /* Ajusta según sea necesario */
+  margin: 0 auto;
+}
+
+.tarifa-columna {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espaciado entre las tarifas dentro de cada columna */
+}
+
+.tarifa-columna h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.tarifa {
+  padding: 1rem;
+  border-bottom: 1px solid #484848; /* Línea debajo de todo el div */
+}
+
+.tarifa h4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.tarifa p {
+  font-size: 0.9rem;
+  color: #7a7a7a;
+  margin-bottom: 1rem;
+}
+
+.tarifa-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffab00;
+}
+
+/* Sección completa que cubre toda la pantalla */
+.seccion-reserva-cita {
+  height: 180vh; /* 100% de la altura de la ventana */
+  display: flex; /* Usamos flexbox para centrar el contenido */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  background-image: url('../public/img/FondoCalendario2.jpg'); /* Cambia '/images/fondo.jpg' por la ruta de tu imagen */
+  background-size: cover; /* Asegura que la imagen cubra toda la sección */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+/* Contenedor para el formulario de reserva */
+.reserva-cita {
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Título */
+.reserva-cita h2 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-weight: 600;
+  border-bottom: 2px solid #ffffff; /* Borde fino en la parte inferior */
+  padding-bottom: 1rem;
+  
+}
+
+/* Contenedor del calendario */
+.calendar-container {
+  margin-bottom: 2rem;
+  
+  padding: 1rem;
+}
+
+/* Formulario */
+.reserva-cita form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* Campos de entrada (inputs) */
+.reserva-cita input,
+.reserva-cita select {
+  padding: 1rem;
+  border: 1px solid #000; /* Borde negro fino */
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+/* Estilo cuando el campo está en foco */
+.reserva-cita input:focus,
+.reserva-cita select:focus {
+  border-color: #000000;
+  outline: none;
+}
+
+/* Botón de envío */
+.reserva-cita button {
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #000; /* Borde negro fino */
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.reserva-cita button:active {
+  transform: translateY(2px);
+}
+
+.reserva-cita button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #f3f3f3;
+}
+
+/* Estilo para el calendario */
+.react-calendar {
+  border: none;
+  
+  border-radius: 8px;
+  padding: 0;
+  font-size: 1.5rem;
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Estilo para las celdas de los días */
+.react-calendar__tile {
+  font-size: 1.5rem;
+  height: 150px;
+  width: 150px;
+  line-height: 80px;
+  border: 1px solid #000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Día seleccionado */
+.react-calendar__tile.selected {
+  background-color: #000000; /* Fondo negro completo */
+  color: white; /* Texto blanco */
+  font-weight: bold; /* Resaltar el texto */
+}
+
+/* Evitar que el fondo cambie al hacer clic en otro día */
+.react-calendar__tile.selected:active,
+.react-calendar__tile.selected:focus {
+  background-color: #000000; /* Mantener fondo negro */
+  color: white; /* Mantener texto blanco */
+}
+
+/* Estilo de los días de la semana (lunes, martes...) */
+.react-calendar__month-view__weekdays__weekday {
+  background-color: #161616;
+  color: #f3f3f3;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+/* Eliminar puntos de debajo de los días de la semana */
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+}
+
+
+.mensaje-exito {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.2rem 2rem;
+  background-color: #ffab00; /* Azul profesional */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  animation: aparecer 0.3s ease-out;
+}
+
+.mensaje-exito p {
+  margin: 0;
+}
+
+/* Contenedor superior con los botones de navegación y título */
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  
+}
+
+/* Botones de navegación (mes anterior, siguiente, año anterior, etc.) */
+.react-calendar__navigation button {
+  background: transparent;
+  border: none;
+  font-size: 2rem; /* Tamaño más pequeño */
+  padding: 0.3rem 0.6rem;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+}
+
+/* Título (ej: Abril 2025) */
+.react-calendar__navigation__label {
+  font-size: 1rem; /* Tamaño más pequeño */
+  font-weight: 500;
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Botones cuando están deshabilitados */
+.react-calendar__navigation button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+
+/* Dispositivos pequeños (móviles) */
+
+
+/* Dispositivos medianos (tablets) */
+@media (max-width: 1024px) {
+  .hero-heading {
+    font-size: 3rem;
+  }
+
+  .artista-card{
+    width: 31%; /* Dos tarjetas por fila */
+    
+  }
+  .services {
+    flex-direction: column; /* Apilar los servicios */
+    
+  }
+
+  
+  .service-item {
+    width: 100%;
+    height: 130vh; /* Ajustar altura */
+  }
+
+  .horario-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    padding: 20px;
+    width: 80%; /* Limitar el ancho del texto */
+  }
+
+  .tarifas-container {
+    grid-template-columns: 1fr 1fr ; /* Dos columnas */
+    width: 100%;
+  }
+
+  .tarifa h4 {
+    font-size: 1.4rem;
+  }
+
+  .cuchilla2 {
+    right: 0; /* Coloca la imagen a la derecha */
+    width: 30vh; /* Ajusta el tamaño según necesites */
+    height: auto;
+    top: -50%; /* Ajusta la posición vertical */
+  }
+
+  .cuchilla {
+    left: 0; /* Coloca la imagen a la izquierda */
+    width: 30vh; /* Ajusta el tamaño según necesites */
+    height: auto;
+    top: -20%; /* Ajusta la posición vertical */
+  }
+  
+
+  .tarifa-price {
+    font-size: 1.4rem;
+  }
+
+  .tarifas-heading {
+    font-size: 2.5rem;
+  }
+
+  .react-calendar {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  .react-calendar__tile {
+    font-size: 1.2rem;
+    height: 120px;
+    width: 120px;
+  }
+
+  .react-calendar__month-view__weekdays__weekday {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 990px){
+  .horario-hora {
+    font-size: 1.0rem;
+    
+  }
+
+  .horario-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    padding: 20px;
+    width: 90%; /* Limitar el ancho del texto */
+  }
+}
+@media (max-width: 767px) {
+  
+  .logo2 {
+    width: 250px;
+    margin-left: 50%;
+    margin-top: -2rem;
+  }
+  .hero-heading {
+    font-size: 2.5rem; /* Reducir el tamaño del texto */
+    margin-top: 5rem; /* Ajustar el margen superior */
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .services {
+    flex-direction: column; /* Apilar los servicios */
+    
+  }
+
+  .service-item {
+    width: 100%;
+    height: 120vh; /* Reducir la altura de las imágenes */
+    padding: 1rem;
+  }
+
+  .service-content h2 {
+    font-size: 2rem;
+  }
+
+  .service-content p {
+    font-size: 1rem;
+  }
+
+  .conoce-artistas-heading {
+    font-size: 2.5rem;
+  }
+
+  
+
+  .artista-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .tarifas-container {
+    grid-template-columns: 1fr; /* 1 columna para pantallas pequeñas */
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .tarifa-columna {
+    gap: 1rem;
+  }
+
+  .tarifa h4 {
+    font-size: 1.2rem;
+  }
+
+  .tarifa-price {
+    font-size: 1.2rem;
+  }
+
+  .tarifas-heading {
+    font-size: 2rem;
+  }
+
+  .horario-container {
+    flex-direction: column; /* Apilar los items del horario */
+  }
+
+  .horario-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    padding: 20px;
+    width: 90%; /* Limitar el ancho del texto */
+  }
+
+  .horario-item {
+    width: 100%;
+    height: 60vh; /* Reducir la altura de las imágenes */
+  }
+
+  .horario-texto h2 {
+    font-size: 2rem;
+  }
+
+  .react-calendar {
+    font-size: 1rem;
+    width: 100%; /* Ajustar el tamaño del calendario */
+  }
+
+  .react-calendar__tile {
+    font-size: 1rem;
+    height: 70px;
+    width: 200px;
+    line-height: 50px;
+  }
+
+  .react-calendar__month-view__weekdays__weekday {
+    font-size: 0.9rem;
+  }
+
+  .reserva-cita h2 {
+    font-size: 2.5rem;
+  }
+
+  .reserva-cita form {
+    padding: 1rem;
+  }
+
+  .reserva-cita input, .reserva-cita select {
+    font-size: 1rem;
+  }
+
+  .reserva-cita button {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 424px) {
+  
+  .logo2 {
+    width: 250px;
+    margin-left: 10%;
+    margin-top: -2rem;
+  }
+  .hero-heading {
+    font-size: 1.9rem; /* Reducir el tamaño del texto */
+    margin-top: 5rem; /* Ajustar el margen superior */
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .services {
+    flex-direction: column; /* Apilar los servicios */
+    
+  }
+
+  .service-item {
+    width: 100%;
+    height: 120vh; /* Reducir la altura de las imágenes */
+    padding: 1rem;
+  }
+
+  .service-content h2 {
+    font-size: 2rem;
+  }
+
+  .service-content p {
+    font-size: 1rem;
+  }
+
+  .conoce-artistas-heading {
+    font-size: 2.5rem;
+  }
+
+  
+
+  .artista-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .tarifas-container {
+    grid-template-columns: 1fr; /* 1 columna para pantallas pequeñas */
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .tarifa-columna {
+    gap: 1rem;
+  }
+
+  .tarifa h4 {
+    font-size: 1.2rem;
+  }
+
+  .tarifa-price {
+    font-size: 1.2rem;
+  }
+
+  .tarifas-heading {
+    font-size: 2rem;
+  }
+
+  .horario-container {
+    flex-direction: column; /* Apilar los items del horario */
+  }
+
+  .horario-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    padding: 20px;
+    width: 86%; /* Limitar el ancho del texto */
+  }
+
+  .horario-hora{
+    font-size: 0.8rem;
+  }
+  .horario-item {
+    width: 100%;
+    height: 90vh; /* Reducir la altura de las imágenes */
+  }
+
+  .horario-texto h2 {
+    font-size: 2rem;
+  }
+
+  
+}
+
+@media (max-width: 330px) {
+  .react-calendar {
+    width: 100% !important;
+    font-size: 0.8rem;
+  }
+
+  .react-calendar__tile {
+    height: 50px;
+    width: 238px;
+    font-size: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .react-calendar__navigation {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  
+
+  .calendar-container {
+    padding: 0;
+  }
+}
